@@ -24,11 +24,8 @@ if (location.hostname.indexOf('github.io') !== -1) {
   header nav { display:flex; gap:22px; margin-left:auto; font-weight:600; font-size:15px; }
   header nav a { opacity:.85; }
   header nav a:hover, header nav a.on { opacity:1; color:#ffb066; }
-  /* platform tabs */
-  .tabs { background-color:#f2a93b;
-    background-image:linear-gradient(rgba(247,183,51,.88), rgba(242,140,40,.88)), url('group.png');
-    background-size:cover; background-position:center;
-    display:flex; justify-content:center; padding:26px 16px 0; }
+  /* solid orange bar (replaces the platform tab strip) */
+  .orangebar { background:#ff7a1a; height:54px; }
   .tab { display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 34px;
     border-radius:16px 16px 0 0; font-weight:700; font-size:14px; color:var(--navy); }
   .tab .ic { font-size:30px; }
@@ -69,9 +66,7 @@ if (location.hostname.indexOf('github.io') !== -1) {
   </nav>
 </header>
 
-<div class="tabs">
-  <div class="tab sel"><span class="ic">🖥️</span>PC</div>
-</div>
+<div class="orangebar"></div>
 
 <section class="hero">
   <div>
