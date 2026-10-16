@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download RecNova</title>
+<meta name="description" content="Download RecNova for PC.">
+<script>
+// GitHub Pages is just a forwarder — the real site lives on Cloudflare.
+if (location.hostname.indexOf('github.io') !== -1) {
+  var p = location.pathname.replace(/^\/RecNova-com/i, '') || '/';
+  location.replace('https://recnova-com.foxcorpgames.workers.dev' + p + location.search + location.hash);
+}
+</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --brown:#3e2417; --navy:#1b2a6b; --burnt:#c96a2c; }
+  body { font-family:"Segoe UI", system-ui, sans-serif; background:#f5efe6; color:var(--navy); }
+  a { text-decoration:none; color:inherit; }
+  /* header */
+  header { background:var(--brown); color:#fff; display:flex; align-items:center; gap:26px; padding:14px 32px; }
+  .logo { font-size:24px; font-weight:800; letter-spacing:-.5px; }
+  .logo span { color:#ffb066; }
+  header nav { display:flex; gap:22px; margin-left:auto; font-weight:600; font-size:15px; }
+  header nav a { opacity:.85; }
+  header nav a:hover, header nav a.on { opacity:1; color:#ffb066; }
+  /* platform tabs */
+  .tabs { background:linear-gradient(180deg,#f7b733,#f28c28); display:flex; justify-content:center; padding:26px 16px 0; }
+  .tab { display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 34px;
+    border-radius:16px 16px 0 0; font-weight:700; font-size:14px; color:var(--navy); }
+  .tab .ic { font-size:30px; }
+  .tab.sel { background:var(--burnt); color:#fff; box-shadow:0 -6px 18px rgba(0,0,0,.12); }
+  /* hero */
+  .hero { background:linear-gradient(180deg,#f28c28,#ef7d1a); display:grid;
+    grid-template-columns:1fr 1fr; gap:24px; align-items:center;
+    max-width:1100px; margin:0 auto; padding:48px 40px 64px; border-radius:0 0 28px 28px; }
+  .hero h1 { font-size:clamp(34px,4.5vw,54px); font-weight:800; letter-spacing:-1px; margin-bottom:16px; }
+  .hero p { font-size:17px; line-height:1.6; max-width:440px; margin-bottom:14px; }
+  .hero .req { font-style:italic; font-size:14px; opacity:.8; margin-bottom:28px; }
+  .dl { display:inline-block; background:var(--brown); color:#fff; font-size:19px; font-weight:800;
+    padding:16px 52px; border-radius:999px; border:none; cursor:pointer;
+    box-shadow:0 10px 28px rgba(62,36,23,.4); transition:transform .15s; }
+  .dl:hover { transform:translateY(-2px) scale(1.03); }
+  .art { display:flex; justify-content:center; }
+  /* esrb strip */
+  .esrb { background:var(--brown); color:#fff; text-align:center; padding:22px; margin-top:48px; }
+  .esrb .badge { display:inline-block; border:3px solid #fff; border-radius:10px; padding:8px 14px;
+    font-weight:800; font-size:20px; margin-bottom:8px; }
+  .esrb p { font-size:14px; opacity:.85; }
+  footer { background:var(--brown); color:#fff; text-align:center; padding:26px 16px 34px;
+    font-size:13px; border-top:1px solid rgba(255,255,255,.12); }
+  footer .socials { font-size:22px; letter-spacing:10px; margin-bottom:12px; }
+  footer p { opacity:.75; margin:4px 0; }
+  @media (max-width:760px){ .hero { grid-template-columns:1fr; text-align:center; } .hero p{ margin-inline:auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">Rec<span>Nova</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="download.html" class="on">Download</a>
+  </nav>
+</header>
+
+<div class="tabs">
+  <div class="tab sel"><span class="ic">🖥️</span>PC</div>
+</div>
+
+<section class="hero">
+  <div>
+    <h1>RecNova for PC</h1>
+    <p>RecNova is the best place to build and play games together. Create something fun with friends from around the world — right from your desktop.</p>
+    <p class="req">Requires Windows 10 or later</p>
+    <button class="dl" onclick="alert('coming soon')">⬇ Download</button>
+  </div>
+  <div class="art">
+    <svg width="260" height="300" viewBox="0 0 260 300" aria-label="RecNova avatar">
+      <ellipse cx="130" cy="282" rx="80" ry="14" fill="rgba(0,0,0,.18)"/>
+      <rect x="85" y="150" width="90" height="110" rx="22" fill="#3b82f6"/>
+      <rect x="85" y="150" width="90" height="34" rx="17" fill="#60a5fa"/>
+      <rect x="55" y="160" width="28" height="80" rx="14" fill="#f2c194"/>
+      <rect x="177" y="160" width="28" height="80" rx="14" fill="#f2c194"/>
+      <rect x="95" y="255" width="24" height="34" rx="10" fill="#334155"/>
+      <rect x="141" y="255" width="24" height="34" rx="10" fill="#334155"/>
+      <rect x="78" y="60" width="104" height="96" rx="30" fill="#f2c194"/>
+      <rect x="78" y="60" width="104" height="34" rx="17" fill="#6b4a2f"/>
+      <rect x="70" y="38" width="120" height="34" rx="14" fill="#c96a2c"/>
+      <rect x="70" y="38" width="120" height="12" rx="6" fill="#a8541f"/>
+      <rect x="92" y="98" width="76" height="22" rx="11" fill="#1f2937"/>
+      <rect x="98" y="102" width="28" height="14" rx="7" fill="#93c5fd" opacity=".8"/>
+      <rect x="134" y="102" width="28" height="14" rx="7" fill="#93c5fd" opacity=".8"/>
+      <path d="M112 136 q18 12 36 0" stroke="#7c4a21" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<div class="esrb">
+  <div class="badge">E10+</div>
+  <p>Fantasy Violence &nbsp;|&nbsp; Users Interact</p>
+</div>
+
+<footer>
+  <div class="socials">🎵 📸 ▶️ 💬 ✖️ 📘 🟣</div>
+  <p>© 2026 RecNova. A fan-made revival — not affiliated with Rec Room Inc.</p>
+  <p>Privacy &nbsp;·&nbsp; Terms</p>
+</footer>
+
+</body>
+</html>
