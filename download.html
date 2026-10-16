@@ -25,9 +25,12 @@ if (location.hostname.indexOf('github.io') !== -1) {
   header nav a { opacity:.85; }
   header nav a:hover, header nav a.on { opacity:1; color:#ffb066; }
   /* solid orange bar (replaces the platform tab strip) */
-  .orangebar { background:#ff7a1a; height:54px; display:flex; align-items:center; justify-content:center;
-    gap:10px; color:#fff; font-weight:700; font-size:16px; }
-  .orangebar .ic { font-size:22px; }
+  .orangebar { background:#ff7a1a; min-height:54px; display:flex; align-items:center; justify-content:center;
+    gap:12px; padding:8px; }
+  .ptab { border:none; background:transparent; color:#fff; font-weight:700; font-size:16px;
+    padding:10px 34px; border-radius:999px; cursor:pointer; font-family:inherit; }
+  .ptab.sel { background:rgba(0,0,0,.22); box-shadow:inset 0 2px 6px rgba(0,0,0,.2); }
+  .ptab:hover:not(.sel) { background:rgba(255,255,255,.15); }
   .tab { display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 34px;
     border-radius:16px 16px 0 0; font-weight:700; font-size:14px; color:var(--navy); }
   .tab .ic { font-size:30px; }
@@ -68,14 +71,17 @@ if (location.hostname.indexOf('github.io') !== -1) {
   </nav>
 </header>
 
-<div class="orangebar"><span class="ic">🖥️</span>PC</div>
+<div class="orangebar">
+  <button class="ptab sel" data-build="2018">2018</button>
+  <button class="ptab" data-build="remade">Remade</button>
+</div>
 
 <section class="hero">
   <div>
-    <h1>RecNova for PC</h1>
-    <p>RecNova is the best place to build and play games together. Create something fun with friends from around the world — right from your desktop.</p>
-    <p class="req">Requires Windows 10 or later</p>
-    <button class="dl" onclick="alert('coming soon')">⬇ Download</button>
+    <h1 id="heroTitle">RecNova for PC</h1>
+    <p id="heroDesc">RecNova is the best place to build and play games together. Create something fun with friends from around the world — right from your desktop.</p>
+    <p class="req" id="heroReq">Requires Windows 10 or later</p>
+    <button class="dl" id="dlBtn" onclick="alert('coming soon')">⬇ Download</button>
   </div>
   <div class="art">
     <img src="https://web.archive.org/web/20250412210218/https://cdn.rec.net/static/logos/download_avatar_pc.webp" alt="RecNova avatar" style="max-width:280px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.25));">
@@ -92,6 +98,28 @@ if (location.hostname.indexOf('github.io') !== -1) {
   <p>© 2026 RecNova. A fan-made revival — not affiliated with Rec Room Inc.</p>
   <p>Privacy &nbsp;·&nbsp; Terms</p>
 </footer>
+
+<script>
+  var builds = {
+    '2018': { title:'RecNova for PC',
+      desc:'RecNova is the best place to build and play games together. Create something fun with friends from around the world — right from your desktop.',
+      req:'Requires Windows 10 or later', btn:'⬇ Download' },
+    'remade': { title:'RecNova Remade',
+      desc:'The classic Rec Room experience, remade for the modern web. Jump straight in and play — nothing to install.',
+      req:'Runs in your browser', btn:'▶ Play' }
+  };
+  var dlBtn = document.getElementById('dlBtn');
+  document.querySelectorAll('.ptab').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.ptab').forEach(function(x){ x.classList.toggle('sel', x === b); });
+      var d = builds[b.getAttribute('data-build')];
+      document.getElementById('heroTitle').textContent = d.title;
+      document.getElementById('heroDesc').textContent = d.desc;
+      document.getElementById('heroReq').textContent = d.req;
+      dlBtn.textContent = d.btn;
+    });
+  });
+</script>
 
 </body>
 </html>
