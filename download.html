@@ -81,7 +81,7 @@ if (location.hostname.indexOf('github.io') !== -1) {
     <h1 id="heroTitle">RecNova for PC</h1>
     <p id="heroDesc">RecNova is the best place to build and play games together. Create something fun with friends from around the world — right from your desktop.</p>
     <p class="req" id="heroReq">Requires Windows 10 or later</p>
-    <button class="dl" id="dlBtn" onclick="alert('coming soon')">⬇ Download</button>
+    <button class="dl" id="dlBtn">⬇ Download</button>
   </div>
   <div class="art">
     <img src="https://web.archive.org/web/20250412210218/https://cdn.rec.net/static/logos/download_avatar_pc.webp" alt="RecNova avatar" style="max-width:280px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.25));">
@@ -109,16 +109,27 @@ if (location.hostname.indexOf('github.io') !== -1) {
       req:'Runs in your browser', btn:'▶ Play' }
   };
   var dlBtn = document.getElementById('dlBtn');
+  var currentBuild = '2018';
+  function updateBuild(){
+    var d = builds[currentBuild];
+    document.getElementById('heroTitle').textContent = d.title;
+    document.getElementById('heroDesc').textContent = d.desc;
+    document.getElementById('heroReq').textContent = d.req;
+    dlBtn.textContent = d.btn;
+    if(currentBuild === 'remade'){
+      dlBtn.onclick = function(){ location.href = 'https://recnova.foxcorpgames.workers.dev/'; };
+    } else {
+      dlBtn.onclick = function(){ alert('coming soon'); };
+    }
+  }
   document.querySelectorAll('.ptab').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.ptab').forEach(function(x){ x.classList.toggle('sel', x === b); });
-      var d = builds[b.getAttribute('data-build')];
-      document.getElementById('heroTitle').textContent = d.title;
-      document.getElementById('heroDesc').textContent = d.desc;
-      document.getElementById('heroReq').textContent = d.req;
-      dlBtn.textContent = d.btn;
+      currentBuild = b.getAttribute('data-build');
+      updateBuild();
     });
   });
+  updateBuild();
 </script>
 
 </body>
