@@ -17,6 +17,10 @@ if (location.hostname.indexOf('github.io') !== -1) {
   :root { --brown:#3e2417; --navy:#1b2a6b; --burnt:#c96a2c; }
   body { font-family:"Segoe UI", system-ui, sans-serif; background:#f5efe6; color:var(--navy); }
   a { text-decoration:none; color:inherit; }
+  /* shutdown notice */
+  .shutdown { background:#ff7a1a; color:#fff; text-align:center; font-weight:700;
+    font-size:15px; padding:12px 20px; line-height:1.5; }
+  .shutdown a { text-decoration:underline; }
   /* header */
   header { background:var(--brown); color:#fff; display:flex; align-items:center; gap:26px; padding:14px 32px; }
   .logo { font-size:24px; font-weight:800; letter-spacing:-.5px; }
@@ -62,6 +66,8 @@ if (location.hostname.indexOf('github.io') !== -1) {
 </style>
 </head>
 <body>
+
+<div class="shutdown">⚠️ RecNova.com is shutting down soon — we're moving to <a href="https://recnova.net">recnova.net</a>. Download buttons have stopped working.</div>
 
 <header>
   <a class="logo" href="index.html">Rec<span>Nova</span></a>
