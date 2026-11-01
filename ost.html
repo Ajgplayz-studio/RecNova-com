@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OST</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; }
+  body { background:#fff; color:#111; font-family:"Segoe UI", system-ui, sans-serif;
+    display:flex; align-items:center; justify-content:center; }
+  .box { text-align:center; padding:20px; }
+  .box p { font-size:20px; margin-bottom:16px; }
+  .box input { padding:10px 14px; font-size:17px; border:1px solid #999; border-radius:6px;
+    outline:none; text-align:center; font-family:inherit; }
+  .box .err { margin-top:12px; font-size:14px; color:#c0392b; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <p>do you really want to see the ost?</p>
+  <form id="ask"><input id="ans" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus></form>
+  <div class="err" id="err"></div>
+</div>
+<script>
+  document.getElementById("ask").addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = document.getElementById("ans").value.trim().toLowerCase();
+    if (v === "yes" || v === "y") { location.href = "https://fufj.my.canva.site/recnova-ost"; }
+    else if (v === "no" || v === "n") { location.href = "https://ajgplayz-studio.github.io/RecNova-com/shutdown"; }
+    else {
+      document.getElementById("err").textContent = "Type yes or no.";
+      document.getElementById("ans").focus();
+    }
+  });
+</script>
+</body>
+</html>
